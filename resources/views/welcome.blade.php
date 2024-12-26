@@ -1,10 +1,15 @@
+<?php
+    $title = 'Laravel';
+    $infos = ['Laravel core concepts', 'Let\'s start'];
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ $title }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -57,6 +62,12 @@
                             </nav>
                         @endif
                     </header>
+
+                    <div class="text-center">
+                        @foreach($infos as $info)
+                            <p>{{ $info }}</p>
+                        @endforeach
+                    </div>
 
                     <main class="mt-6">
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
@@ -169,6 +180,7 @@
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </footer>
+
                 </div>
             </div>
         </div>
