@@ -1,7 +1,7 @@
 <?php
     $infos = [
         "Core concepts of $title ".number_format($version, 2), 
-        "Let\'s start, $name"
+        "Let's start, $name"
     ];
 
     $infos_array = [
