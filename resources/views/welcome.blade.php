@@ -1,11 +1,12 @@
 <?php
-    $title = 'Laravel';
-    $version = '11';
-    $infos = ['Laravel core concepts', 'Let\'s start'];
+    $infos = [
+        "Core concepts of $title ".number_format($version, 2), 
+        "Let\'s start, $name"
+    ];
 
     $infos_array = [
-        (object) ['title' => 'Laravel core concepts'],
-        (object) ['title' => 'Let\'s start'],
+        (object) ['title' => $infos[0]],
+        (object) ['title' => $infos[1]],
     ];
 ?>
 
