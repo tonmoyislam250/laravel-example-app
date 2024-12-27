@@ -1,6 +1,12 @@
 <?php
     $title = 'Laravel';
+    $version = '11';
     $infos = ['Laravel core concepts', 'Let\'s start'];
+
+    $infos_array = [
+        (object) ['title' => 'Laravel core concepts'],
+        (object) ['title' => 'Let\'s start'],
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +70,16 @@
                     </header>
 
                     <div class="text-center">
+                    <?php /*     
                         @foreach($infos as $info)
                             <p>{{ $info }}</p>
                         @endforeach
+                    */ ?> 
+
+                        @foreach($infos_array as $info)
+                            <p>{{ $info->title }}</p>
+                        @endforeach
+                        <p>{{ $title }} {{ number_format($version, 2) }}</p>
                     </div>
 
                     <main class="mt-6">
