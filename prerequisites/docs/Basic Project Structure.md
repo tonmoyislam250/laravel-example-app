@@ -73,7 +73,7 @@ To use databases (e.g., MySQL), follow these steps:
       ```bash
       use test_db;
       ```
-   - Create table user
+   - Create table users
       ```bash
       CREATE TABLE user (
          id INT AUTO_INCREMENT,
@@ -96,6 +96,11 @@ To use databases (e.g., MySQL), follow these steps:
       ```bash
       SELECT * FROM user;
       ```
+   - Rename a table
+      ```bash
+      ALTER TABLE user RENAME users;
+      ```
+   - 
 
 2. **Create a Database using `phpMyAdmin`**:
    - Open phpMyAdmin (`http://localhost/phpmyadmin`).
@@ -133,5 +138,19 @@ To use databases (e.g., MySQL), follow these steps:
 2. Otherwise, Run your script using `XAMPP` or `WAMP`:
    - If using XAMPP or WAMP, place the folder inside the `htdocs` or `www` directory, respectively.
    - Access your project at `http://localhost/php-project`.
+
+---
+
+## **Step 5: Test and Debug**
+1. Enable error reporting during development:
+   ```php
+   <?php
+   ini_set('display_errors', 1);
+   ini_set('display_startup_errors', 1);
+   error_reporting(E_ALL);
+   ?>
+   ```
+
+2. Test everything by accessing the site via `http://localhost`.
 
 ---
