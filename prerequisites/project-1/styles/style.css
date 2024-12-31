@@ -3,6 +3,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
+    overflow-x: auto;
 }
 
 table {
@@ -28,3 +29,9 @@ a[style] {
     color: black;
 }
 
+
+@media (max-width: 500px) {
+    table {
+        width: 480px;
+    }
+}
