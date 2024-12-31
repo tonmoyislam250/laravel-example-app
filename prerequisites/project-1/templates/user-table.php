@@ -1,7 +1,7 @@
 <?php
 
 // Pagination settings
-$limit = 1; // Records per page
+$limit = 2; // Records per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $page = max($page, 1); // Ensure the page number is at least 1
 $offset = ($page - 1) * $limit;
@@ -9,6 +9,7 @@ $offset = ($page - 1) * $limit;
 // Fetch total record count
 $totalQuery = "SELECT COUNT(*) AS total FROM users";
 $totalResult = $conn->query($totalQuery);
+
 $totalRecords = $totalResult->fetch_assoc()['total'];
 $totalPages = ceil($totalRecords / $limit);
 
