@@ -1,4 +1,10 @@
 
+.user-table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 table {
     width: 50%;
     border-collapse: collapse;

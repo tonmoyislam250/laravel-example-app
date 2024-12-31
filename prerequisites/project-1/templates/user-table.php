@@ -18,6 +18,9 @@ $sql = "SELECT * FROM users LIMIT $offset, $limit";
 $result = $conn->query($sql);
 
 // Display the users in a table
+
+echo '<h2>User Table</h2>';
+
 echo '<table border="1" cellpadding="10">';
 echo '<tr><th>ID</th><th>Name</th></tr>';
 
