@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController as FrontUserController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,8 +15,11 @@ Route::get('/', function () {
     return view('welcome', compact('name', 'title', 'version'));
 });
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('/users', [FrontUserController::class, 'index'])->name('users.index');
+Route::get('/users/{id}', [FrontUserController::class, 'show'])->name('users.show');
+
+Route::get('/admin/users', [AdminUserController::class, 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
