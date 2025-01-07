@@ -10,20 +10,28 @@
                 <h1 class="text-4xl text-center my-10">User List</h1>
 
                 <div class="text-center overflow-x-auto mt-10">
-                    <table class="w-fit mx-auto border-collapse text-center">
-                      <tr class="flex">
-                        <th class="p-2">ID</th>
-                        <th class="p-2">Name</th>
-                        <th class="p-2">Email</th>
+                <table class="table-auto border-collapse border border-gray-400 w-full">
+                  <thead>
+                      <tr class="bg-black">
+                        <th class="p-2 border border-gray-400">ID</th>
+                        <th class="p-2 border border-gray-400">Name</th>
+                        <th class="p-2 border border-gray-400">Email</th>
                       </tr>
-                      @foreach($users as $user)
-                        <tr class="flex">
-                            <td class="p-2"><?= htmlspecialchars($user->id) ?></td>
-                            <td class="p-2"><?= htmlspecialchars($user->name) ?></td>
-                            <td class="p-2"><?= htmlspecialchars($user->email) ?></td>
-                        </tr>
-                      @endforeach
-                    </table>
+                  </thead>
+                  <tbody>
+                    @foreach ($users as $user)
+                      <tr class="hover:bg-gray-900">
+                        <td class="p-2 border border-gray-400">  
+                          <a href="{{ route('users.show', ['id' => $user->id]) }}" class="text-blue-500 hover:underline">
+                            {{ $user->id }}
+                          </a>
+                        </td>  
+                        <td class="p-2 border border-gray-400">{{ $user->name }}</td>
+                        <td class="p-2 border border-gray-400">{{ $user->email }}</td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+              </table>
                 </div>
             </div>
         </div>
