@@ -35,7 +35,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return "It will show post $id";
     }
 
     /**
