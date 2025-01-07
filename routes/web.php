@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowProfile;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController as FrontUserController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 
@@ -23,6 +24,7 @@ Route::get('/admin/users', [AdminUserController::class, 'index']);
 
 Route::get('/profile/{id}', ShowProfile::class);
 
+Route::resource('posts', PostController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
