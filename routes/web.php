@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShowProfile;
 use App\Http\Controllers\UserController as FrontUserController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 
@@ -19,6 +20,8 @@ Route::get('/users', [FrontUserController::class, 'index'])->name('users.index')
 Route::get('/users/{id}', [FrontUserController::class, 'show'])->name('users.show');
 
 Route::get('/admin/users', [AdminUserController::class, 'index']);
+
+Route::get('/profile/{id}', ShowProfile::class);
 
 
 Route::get('/dashboard', function () {
