@@ -3,8 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
-    return view('welcome');
+    $name = 'John Scott';
+    $title = 'Laravel';
+    $version = '12';
+
+    return view('welcome', compact('name', 'title', 'version'));
 });
 
 Route::get('/dashboard', function () {
